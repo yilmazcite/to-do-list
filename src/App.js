@@ -5,7 +5,7 @@ import List from "./components/List";
 import Form from "./components/Form";
 import RemoveItems from "./components/RemoveItems";
 
-const App = (props) => {
+const App = () => {
   //store the input value into allItems state and send it to components as a prop:
   const [allItems, setAllItems] = useState([
     {
