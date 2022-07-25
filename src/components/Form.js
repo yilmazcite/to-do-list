@@ -6,7 +6,11 @@ const Form = (props) => {
   const [newItem, setNewItem] = useState("");
 
   const handleChange = (event) => {
-    setNewItem(event.target.value);
+    let task = event.target.value;
+    return (
+      task.length < 35 ? setNewItem(task) : (task = task.slice(0, 35)),
+      setNewItem(task)
+    );
   };
 
   const handleSubmit = (event) => {
