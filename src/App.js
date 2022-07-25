@@ -41,12 +41,10 @@ const App = () => {
     });
   };
 
-  const removeItems = (itemCheck, itemID) => {
-    //check the innerHTML of the clicked item and toggle boolean value of 'isSelected':
+  const removeItems = (itemID) => {
+    //check the id of the clicked item and toggle the boolean value of 'isSelected':
     allItems.forEach((item) => {
-      return item.isSelected === itemCheck && item.id === itemID
-        ? (item.isSelected = !item.isSelected)
-        : item;
+      return item.id === itemID ? (item.isSelected = !item.isSelected) : item;
     });
   };
 
@@ -62,6 +60,7 @@ const App = () => {
           return (
             <List
               key={item.id}
+              id={item.id}
               item={item.item}
               allItems={allItems}
               onItemRemoval={removeItems}
