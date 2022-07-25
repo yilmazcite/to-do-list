@@ -4,20 +4,11 @@ const List = (props) => {
   const [isClicked, setClicked] = useState(false);
 
   const clickHandler = (event) => {
+    //toggle the value of isClicked and shift it between true and false for the conditional inline styling:
     setClicked(!isClicked);
 
-    let crossedOver = event.target.innerHTML;
-
-    let selectedID;
-
-    props.allItems.forEach((item) => {
-      return isClicked === false && item.item === crossedOver
-        ? (selectedID = item.id)
-        : item;
-    });
-
-    props.onItemRemoval(isClicked, selectedID);
-    //toggle the value of isClicked and shift it between true and false for the conditional inline styling.
+    //send the id of the clicked item via onItemRemoval prop:
+    props.onItemRemoval(props.id);
   };
 
   return (
