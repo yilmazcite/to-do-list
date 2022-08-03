@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const List = (props) => {
   const [isClicked, setClicked] = useState(false);
 
-  const clickHandler = (event) => {
+  const clickHandler = () => {
     //toggle the value of isClicked and shift it between true and false for the conditional inline styling:
     setClicked(!isClicked);
 
